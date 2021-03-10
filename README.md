@@ -1,24 +1,19 @@
 # docker-bubbleupnpserver
 
-## Architectures 
-
-- amd64: https://github.com/wdstar/docker-bubbleupnpserver
-- armhf: https://github.com/wdstar/docker-bubbleupnpserver/tree/armhf
-- armhf-optware-ng: https://github.com/wdstar/docker-bubbleupnpserver/tree/armhf-optware-ng
 
 ## Usage
 
-- Build image.
+- Build image
 
 ```
-$ docker-compose build
+$ docker build -t <name:tag> .
 ```
+Note: more about name:tag can find in [docker tag Docs](https://docs.docker.com/engine/reference/commandline/tag/)
 
-- Start BubbleUPnP Server.
+- Run 
 
 ```
-$ touch data/configuration.xml
-$ docker-compose up -d
+$ docker run --rm -it -d --name <container_name> --publish 58050:58050 --publish 58051:58051 --publish 58052:58052 <docker_image>
 ```
 
 - Access `http://localhost:58050/`
