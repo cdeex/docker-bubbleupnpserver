@@ -4,7 +4,7 @@ ARG site_url=https://launchpad.net/~bubbleguuum/+archive/bubbleupnpserver/+files
 ARG pkg=bubbleupnpserver_0.9-5_all.deb
 
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends wget ffmpeg && \
+    apt-get install -y --no-install-recommends wget ffmpeg unzip && \
     wget ${site_url}/${pkg} && \
     dpkg -i $pkg && \
     apt-get autoremove -y && \
